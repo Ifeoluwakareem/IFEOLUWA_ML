@@ -14,6 +14,7 @@ Push new repository to github
     git init
     git add README.md
     git commit -m "first commit"
+    git commit -m "ML first commit"
     git branch -M main
     git remote add origin https://github.com/Ifeoluwakareem/IFEOLUWA_ML.git
     git push -u origin main
@@ -22,3 +23,9 @@ Push an existing repository to github
     git remote add origin https://github.com/Ifeoluwakareem/IFEOLUWA_ML.git
     git branch -M main
     git push -u origin main
+
+
+Change git cnredentials so I can push to my github
+    git config --global user.name "Ifeoluwakareem"
+    git config --global  user.email "Ifeoluwakareem100@gmail.com"
+    git config --global  username.email "Ifeoluwakareem"
