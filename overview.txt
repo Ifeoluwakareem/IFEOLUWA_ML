@@ -1,0 +1,24 @@
+
+
+github url:https://github.com/
+python: https://www.python.org/
+git: https://git-scm.com/
+
+commands to check python/git installation
+    python: python
+    git: git --version
+    
+
+Push new repository to github
+    echo "# IFEOLUWA_ML" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/Ifeoluwakareem/IFEOLUWA_ML.git
+    git push -u origin main
+
+Push an existing repository to github
+    git remote add origin https://github.com/Ifeoluwakareem/IFEOLUWA_ML.git
+    git branch -M main
+    git push -u origin main
