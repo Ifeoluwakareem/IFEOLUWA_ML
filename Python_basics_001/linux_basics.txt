@@ -7,3 +7,6 @@ linux commands
 5. clear --> to clear terminal
 6. f --> string literally
 ls ---> pwd ---> ls ---> cd Desktop/ ---> cd IFEOLUWA_ML/ ---> python python_basics
+git add .
+git commit -m " "
+git push
