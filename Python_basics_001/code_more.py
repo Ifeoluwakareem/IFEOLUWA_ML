@@ -54,19 +54,39 @@
 # print(dog_name)
 
 
-genders_array = ["Gay", "Straight", "Female"]
-def gender_identity(identify):
-    identify = input("Please identify yourself: ")
-    print(f"Your identity is {identify}")
+        
+# genders_array = ["Gay", "Straight", "Female"]
+
+# def gender_identity(identify):
+#     print(f"Your identity is {identify}")
+
+# for i in genders_array:
+#     print(f"I am still investigating {i}")
+#     gender_identity(i)
+
+# j = 0
+# while j < len(genders_array):
+#     print(f"I am working on {genders_array[j]}")
+#     gender_identity(genders_array[j])
+#     j += 1 
+# def greet():
+#     print("Hello!")
+#     greet()
     
+# def greet(name):
+#     print(f"Hello {name}")
+#     greet("Samuel")
     
-for i in genders_array:
-    print(f"I am still investigating {i}")
-    gender_identity(i)
+# def add(a,b):
+#     return a + b 
+# result = add(2,3)
+# print(result)    
     
+
     
-    j = 0
-    while j < len(genders_array):
-        print(f"I am working on {genders_array[j]}")
-        gender_identity(genders_array[j])
-        j += 1
+
+
+    
+
+
+           
