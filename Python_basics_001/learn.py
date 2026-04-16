@@ -1,30 +1,31 @@
-gg = ["egg", "fish"]
+# gg = ["egg", "fish"]
 
-for i in gg:
-    print(i)
+# for i in gg:
+#     print(i)
     
-k = 0
-while k < len(gg):
-    print(gg[k])
-    k += 1
+# k = 0
+# while k < len(gg):
+#     print(gg[k])
+#     k += 1
     
     
-def printer(data):
-    ret = f"The data is {data}"
-    print(ret)
+# def printer(data):
+#     ret = f"The data is {data}"
+#     print(ret)
     
-printer(data = "Love")
-printer("Love")
+# printer(data = "Love")
+# printer("Love")
 
 
-class Foundation:
-    def __init__(self, count):
-        self.count = count
+# class Foundation:
+#     def __init__(self, count):
+#         self.count = count
         
-    def house(self):
-        ret = f"house is {self.count}"
-        print(ret)
+#     def house(self):
+#         ret = f"house is {self.count}"
+#         print(ret)
         
-g = Foundation(2)
-f = g.house()
-h = g.count                
+# g = Foundation(2)
+# f = g.house()
+# h = g.count                
+
