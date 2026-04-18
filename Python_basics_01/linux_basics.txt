@@ -10,3 +10,4 @@ ls ---> pwd ---> ls ---> cd Desktop/ ---> cd IFEOLUWA_ML/ ---> python python_bas
 git add .
 git commit -m " "
 git push
+https://www.programiz.com/python-programming 

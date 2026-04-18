@@ -85,8 +85,20 @@
 
     
 
-
+from phantom_shalom import Gender
     
+# abstraction: hiding code
+
+# Case1
+def ifeoluwa():
+    print("yaaaay") 
+ifeoluwa()
 
 
-           
+# Case 2
+# class hides abstraction/code
+
+kk = Gender("Ifeoluwa", 60, 15)
+kk.detect_beauty()
+kk.detect_obesity()
+print(kk.male)
