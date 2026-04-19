@@ -1,6 +1,6 @@
 from phantom_shalom import Gender
 
-#abstraction: hiding codeg
+#abstraction: hiding code
 
 #case1
 

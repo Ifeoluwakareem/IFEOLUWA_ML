@@ -36,7 +36,7 @@ class BeautyFinder:
         if int(self.height) >= 20:
             print(f"Model {self.name} is very beautiful.")
         else:
-            print(f"Model {slef.name} is not beautiful.")
+            print(f"Model {self.name} is not beautiful.")
             
     def detect_obesity(self):
         if int(self.weight) >= 30:
