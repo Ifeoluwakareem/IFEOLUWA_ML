@@ -29,34 +29,34 @@
 #     animal.info()
 #     animal.make_sound()
                                     
-class Cow:
-    def __init__(self, name,age):
-        self.name = name
-        self.age = age
+# class Cow:
+#     def __init__(self, name,age):
+#         self.name = name
+#         self.age = age
         
-    def info(self):
-        print(f"I am a cow. My name is {self.name}. I am {self.age} years old.")
+#     def info(self):
+#         print(f"I am a cow. My name is {self.name}. I am {self.age} years old.")
         
-    def make_sound(self):
-        print("Moo")
+#     def make_sound(self):
+#         print("Moo")
         
-class Sheep:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+# class Sheep:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
         
-    def info(self):
-        print(f"I am a sheep. My name is {self.name}. I am {self.age} years old.")
+#     def info(self):
+#         print(f"I am a sheep. My name is {self.name}. I am {self.age} years old.")
         
-    def make_sound(self):
-        print("Baa")
+#     def make_sound(self):
+#         print("Baa")
         
-cow1 = Cow("Cowboy", 7.8)
-sheep1 = Sheep("Wooly", 6)
+# cow1 = Cow("Cowboy", 7.8)
+# sheep1 = Sheep("Wooly", 6)
 
-for animal in (cow1, sheep1):
-    animal.make_sound()
-    animal.info()
-    animal.make_sound()                            
+# for animal in (cow1, sheep1):
+#     animal.make_sound()
+#     animal.info()
+#     animal.make_sound()                            
                                 
    
