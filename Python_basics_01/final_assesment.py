@@ -82,11 +82,11 @@
  
 
 # 9. write a function called checker ✅ 5/5
-    #  It should ask for the user input from 0-5 ( put this in the placeholder)
-    #  control logic ( using if, elif and else).
-        #  if number is less than or eqal to 2, print "Beginner"
-        #  if number is greater than or eqal to 3 and less than or equal to 4, print "Intermediate"
-        #  if number is 5, print expert
+#      It should ask for the user input from 0-5 ( put this in the placeholder)
+#      control logic ( using if, elif and else).
+#          if number is less than or eqal to 2, print "Beginner"
+#          if number is greater than or eqal to 3 and less than or equal to 4, print "Intermediate"
+#          if number is 5, print expert
       
        
 # def checker():
@@ -106,10 +106,10 @@
 # It should take your name and return your python experience in the form below
 # '{name} python experience is awesome'
 
-# def python_experience(name):
-#     return f"{name}'s experience is awesome."
+def python_experience(name):
+    return f"{name}'s experience is awesome."
 
-# # kk=python_experience("Shalom")
-# # print(kk)
+# kk=python_experience("Shalom")
+# print(kk)
 
-# print(python_experience("Shalom"))
+print(python_experience("Shalom"))
