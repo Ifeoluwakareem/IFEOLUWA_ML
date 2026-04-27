@@ -8,4 +8,12 @@ def checker():
         else:
                 print("Expert")
                 
-checker()                
+checker()
+
+# for for loop
+numbers = [1, 2, 3, 4, 5]
+square_number = []
+for num in numbers:
+    square_number.append(num * num)
+
+print(square_number)               
