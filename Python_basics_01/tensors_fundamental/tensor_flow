@@ -72,3 +72,44 @@ array([[[ 1,  2,  3],
 tensor.ndim
 3
 
+What we've created so far:
+
+* Scalar: a single number
+* Vector: a number with direction (e.g. wind speed and direction)
+* Matrix: a 2-dimensional array of numbers
+* Tensor: an n-dimensional array of numbers
+
+# Create the same tensor with tf.varible() as above
+changeable_tensor = tf.Variable([10,7])
+unchangeable_tensor = tf.constant([10,7])
+changeable_tensor, unchangeable_tensor
+(<tf.Variable 'Variable:0' shape=(2,) dtype=int32, numpy=array([10,  7], dtype=int32)>,
+ <tf.Tensor: shape=(2,), dtype=int32, numpy=array([10,  7], dtype=int32)>)
+
+ 
+# Lets try change one of the elements in our changeable tensor
+changeable_tensor[0] = 7
+changeable_tensor
+ ---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/tmp/ipykernel_10002/177564823.py in <cell line: 0>()
+      1 # Lets try change one of the elements in our changeable tensor
+----> 2 changeable_tensor[0] = 7
+      3 changeable_tensor
+
+TypeError: 'ResourceVariable' object does not support item assignment
+
+# How about we try .assign()
+changeable_tensor[0].assign(7)
+changeable_tensor
+<tf.Variable 'Variable:0' shape=(2,) dtype=int32, numpy=array([7, 7], dtype=int32)>
+
+# Lets try change our unchangeable tensor
+unchangeable_tensor[0] = 7
+ ---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/tmp/ipykernel_10002/3545384731.py in <cell line: 0>()
+      1 # Lets try change our unchangeable tensor
+----> 2 unchangeable_tensor[0] = 7
+
+TypeError: 'tensorflow.python.framework.ops.EagerTensor' object does not support item assignment

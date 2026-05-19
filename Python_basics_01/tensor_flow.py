@@ -8,3 +8,120 @@
 #  *Using @tf.function (a way to speed up your regular python functions)
 #  *Using GPUs with tensorFlow (or TPUs)
 #  *Exercises to try for yourself
+#  *Command mb
+
+# Import TensorFlow
+import tensorflow as tf
+print(tf.__version__)
+2.20.0
+
+# Create tensors with tf.constant()
+scalar = tf.constant(7)
+scalar
+<tf.Tensor: shape=(), dtype=int32, numpy=7>
+
+import tensorflow as tf
+
+# Check the number of dimensions of a tensor (ndim stands for number ofdimensions)
+scalar = tf.constant(7)
+scalar.ndim
+0
+
+# Create a vector
+vector = tf.constant([10,10])
+vector
+<tf.Tensor: shape=(2,), dtype=int32, numpy=array([10, 10], dtype=int32)>
+
+# Create the dimension
+vector.ndim
+1
+
+# Create a matrix (has more than 1 dimension)
+matrix = tf.constant([[10, 7],
+                      [7, 10]])
+matrix
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[10,  7],
+       [ 7, 10]], dtype=int32)>
+
+
+matrix.ndim
+2
+
+# Create another matrix
+another_matrix = tf.constant([[10., 7.],
+                              [3., 2.],
+                              [8., 9.]], dtype=tf.float16) # specify the data type with parameter
+another_matrix                              
+<tf.Tensor: shape=(3, 2), dtype=float16, numpy=
+array([[10.,  7.],
+       [ 3.,  2.],
+       [ 8.,  9.]], dtype=float16)>
+
+
+# What is the number of dimensions of another_matrix?
+another_matrix.ndim
+2
+
+# Let's create a tensor
+tensor = tf.constant([[[1, 2,3],
+                       [4,5,6]],
+                       [[7,8,9],
+                        [10, 11, 12]],
+                       [[13, 14, 15],
+                        [16, 17, 18]]])
+tensor
+<tf.Tensor: shape=(3, 2, 3), dtype=int32, numpy=
+array([[[ 1,  2,  3],
+        [ 4,  5,  6]],
+
+       [[ 7,  8,  9],
+        [10, 11, 12]],
+
+       [[13, 14, 15],
+        [16, 17, 18]]], dtype=int32)>
+
+tensor.ndim
+3
+
+What we've created so far:
+
+* Scalar: a single number
+* Vector: a number with direction (e.g. wind speed and direction)
+* Matrix: a 2-dimensional array of numbers
+* Tensor: an n-dimensional array of numbers
+
+# Create the same tensor with tf.varible() as above
+changeable_tensor = tf.Variable([10,7])
+unchangeable_tensor = tf.constant([10,7])
+changeable_tensor, unchangeable_tensor
+(<tf.Variable 'Variable:0' shape=(2,) dtype=int32, numpy=array([10,  7], dtype=int32)>,
+ <tf.Tensor: shape=(2,), dtype=int32, numpy=array([10,  7], dtype=int32)>)
+
+ 
+# Lets try change one of the elements in our changeable tensor
+changeable_tensor[0] = 7
+changeable_tensor
+ ---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/tmp/ipykernel_10002/177564823.py in <cell line: 0>()
+      1 # Lets try change one of the elements in our changeable tensor
+----> 2 changeable_tensor[0] = 7
+      3 changeable_tensor
+
+TypeError: 'ResourceVariable' object does not support item assignment
+
+# How about we try .assign()
+changeable_tensor[0].assign(7)
+changeable_tensor
+<tf.Variable 'Variable:0' shape=(2,) dtype=int32, numpy=array([7, 7], dtype=int32)>
+
+# Lets try change our unchangeable tensor
+unchangeable_tensor[0] = 7
+ ---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/tmp/ipykernel_10002/3545384731.py in <cell line: 0>()
+      1 # Lets try change our unchangeable tensor
+----> 2 unchangeable_tensor[0] = 7
+
+TypeError: 'tensorflow.python.framework.ops.EagerTensor' object does not support item assignment
