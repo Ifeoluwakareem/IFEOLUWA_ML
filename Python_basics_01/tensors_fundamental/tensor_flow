@@ -113,3 +113,88 @@ TypeError                                 Traceback (most recent call last)
 ----> 2 unchangeable_tensor[0] = 7
 
 TypeError: 'tensorflow.python.framework.ops.EagerTensor' object does not support item assignment
+
+🔑 Note: Rarely in practice will you need to decide wheather to use tf.constant or tf.Variable to create tensors, as tensorFlow does this for you. However, if in doubt, use tf.constant and change it later if needed.
+
+### Creating random tensors
+
+Random tensors are tensors of some abritrary size which contain random numbers.
+## Create two random (but the same) tensors
+random_1 = tf.random.Generator.from_seed(42) # set seed for reproducubility
+random_1 = random_1.normal(shape=(3, 2))
+random_1
+
+<tf.Tensor: shape=(3, 2), dtype=float32, numpy=
+array([[-0.7565803 , -0.06854702],
+       [ 0.07595026, -1.2573844 ],
+       [-0.23193763, -1.8107855 ]], dtype=float32)>
+
+## Create two random (but the same) tensors
+random_1 = tf.random.Generator.from_seed(42) # set seed for reproducubility
+random_1 = random_1.normal(shape=(3, 2))
+random_2 = tf.random.Generator.from_seed(42)
+random_2 = random_2.normal(shape=(3, 2))
+
+# Are they equal?
+random_1, random_2, random_1 == random_2
+
+(<tf.Tensor: shape=(3, 2), dtype=float32, numpy=
+ array([[-0.7565803 , -0.06854702],
+        [ 0.07595026, -1.2573844 ],
+        [-0.23193763, -1.8107855 ]], dtype=float32)>,
+ <tf.Tensor: shape=(3, 2), dtype=float32, numpy=
+ array([[-0.7565803 , -0.06854702],
+        [ 0.07595026, -1.2573844 ],
+        [-0.23193763, -1.8107855 ]], dtype=float32)>,
+ <tf.Tensor: shape=(3, 2), dtype=bool, numpy=
+ array([[ True,  True],
+        [ True,  True],
+        [ True,  True]])>)
+
+###Shuffle the order of elements in a tensor
+# shuffle a tensor (valuable for when you want to shuffle your data so the inherent order doesn't effect learning)
+not_shuffled = tf.constant([[10, 7],
+                           [3, 4],
+                           [2, 5]])
+# shuffle our non_shuffled tensor
+tf.random.shuffle(not_shuffled)
+
+<tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+array([[10,  7],
+       [ 2,  5],
+       [ 3,  4]], dtype=int32)>
+
+# shuffle our non_shuffled tensor
+tf.random.shuffle(not_shuffled)   
+
+<tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+array([[ 3,  4],
+       [10,  7],
+       [ 2,  5]], dtype=int32)>
+
+# shuffle our non_shuffled tensor
+tf.random.shuffle(not_shuffled)
+
+<tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+array([[ 2,  5],
+       [ 3,  4],
+       [10,  7]], dtype=int32)>
+
+# shuffle our non_shuffled tensor
+tf.random.set_seed(42)
+tf.random.shuffle(not_shuffled, seed=42)
+
+<tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+array([[10,  7],
+       [ 3,  4],
+       [ 2,  5]], dtype=int32)>
+
+⚒ **Exercise**: Read through TensorFlow documentation on random seed generation:
+https://www.tensorflow.org/api_docs/python/tf/random/set_seed and practice writting 5 random tensors and shuffle them 
+
+not_shuffled
+<tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+array([[10,  7],
+       [ 3,  4],
+       [ 2,  5]], dtype=int32)>
+       
