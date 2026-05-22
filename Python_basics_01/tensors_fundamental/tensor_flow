@@ -198,3 +198,14 @@ array([[10,  7],
        [ 3,  4],
        [ 2,  5]], dtype=int32)>
        
+       
+Creating tensors from numpy arrays
+⚒ **Exercise**: Read through TensorFlow documentation on random seed generation:
+https://www.tensorflow.org/api_docs/python/tf/random/set_seed and practice writting 5 random tensors and shuffle them
+
+It looks like if we want our shuffled tensors to be in the same order, we have got to use the global level random seed as well as the operation level random seed
+
+~Rule 4: "If both the global and the operation seed are set: Both seeds are used in conjuction to determine the random sequence"
+
+tf.random.set_seed(42) #global level random seed
+tf.random.shuffle(not_shuffled, seed=42) #operation level random seed
