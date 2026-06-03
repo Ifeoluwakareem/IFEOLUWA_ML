@@ -337,3 +337,17 @@ array([[[[0., 0., 0., 0., 0.],
          [0., 0., 0., 0., 0.],
          [0., 0., 0., 0., 0.],
          [0., 0., 0., 0., 0.]]]], dtype=float32)>
+
+PIP -- Python Package Manager[Helps to install packages into python engine]
+pip install[package_name]
+pypi -- python package index[global library]
+Tensorflow : Open source machine learning framework for everyone
+Framework : A specialised tool or software for doing a specific task
+
+Model percentage   Accuracy
+10-60              Underfitting
+70-100             Fitting
+Over 100           Over Fitting
+
+Tensors : Are the way tensorflow represent data and they are in scalar and vector
+
