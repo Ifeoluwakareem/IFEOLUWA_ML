@@ -506,4 +506,72 @@ rank_2_tensor
 array([[10,  7],
        [ 3,  4]], dtype=int32)>
 
-### Manipulating Tensors(tensors operations)                            
+### Manipulating Tensors(tensors operations)   
+### Manipulating Tensors(tensors operations)
+**Basic Operations**
+
+'+', '-', '*', '/'
+
+# You can add values to a tensor using the addition operator
+tensor = tf.constant([[10, 7], [3, 4]])
+tensor + 10
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[20, 17],
+       [13, 14]], dtype=int32)>
+
+# You can add values to a tensor using the addition operator (original tensor is unchanged bcs when manipulating tensors, we dont want to change the underlying tensor)
+tensor = tf.constant([[10, 7], [3, 4]])
+tensor
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[10,  7],
+       [ 3,  4]], dtype=int32)>
+
+# original tensor is unchanged
+tensor
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[10,  7],
+       [ 3,  4]], dtype=int32)>
+
+# Multiplication of tensor
+tensor * 10
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[100,  70],
+       [ 30,  40]], dtype=int32)>
+
+# Subtraction of tensor
+tensor - 10
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[ 0, -3],
+       [-7, -6]], dtype=int32)>
+
+# Division of tensor
+tensor / 10
+
+<tf.Tensor: shape=(2, 2), dtype=float64, numpy=
+array([[1. , 0.7],
+       [0.3, 0.4]])>
+
+# We can use the tensorflow built-in function too
+tf.multiply(tensor, 10)
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[100,  70],
+       [ 30,  40]], dtype=int32)>
+
+tf.subtract(tensor, 10)
+
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[ 0, -3],
+       [-7, -6]], dtype=int32)>
+
+tf.divide(tensor, 10)
+<tf.Tensor: shape=(2, 2), dtype=float64, numpy=
+array([[1. , 0.7],
+       [0.3, 0.4]])>
+
+**Matrix Multiplication with Tensors part 1**       
