@@ -575,3 +575,113 @@ array([[1. , 0.7],
        [0.3, 0.4]])>
 
 **Matrix Multiplication with Tensors part 1**       
+# Matrix multiplication in tensorflow
+print(tensor)
+tf.matmul(tensor, tensor)
+tf.Tensor(
+[[10  7]
+ [ 3  4]], shape=(2, 2), dtype=int32)
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[121,  98],
+       [ 42,  37]], dtype=int32)>
+
+tensor, tensor
+(<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+ array([[10,  7],
+        [ 3,  4]], dtype=int32)>,
+ <tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+ array([[10,  7],
+        [ 3,  4]], dtype=int32)>)
+
+tensor * tensor
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[100,  49],
+       [  9,  16]], dtype=int32)>
+
+# Matrix multiplication with python operator "@"
+tensor @ tensor
+<tf.Tensor: shape=(2, 2), dtype=int32, numpy=
+array([[121,  98],
+       [ 42,  37]], dtype=int32)>
+
+tensor.shape
+TensorShape([2, 2])
+
+# Create a tensor (3, 2) tensor
+x = tf.constant([[1, 2],
+                 [3, 4],
+                 [5, 6]])
+# Create another (3, 2) tensor
+y = tf.constant([[7, 8],
+                 [9, 10],
+                 [11, 12]])
+x, y
+(<tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+ array([[1, 2],
+        [3, 4],
+        [5, 6]], dtype=int32)>,
+ <tf.Tensor: shape=(3, 2), dtype=int32, numpy=
+ array([[ 7,  8],
+        [ 9, 10],
+        [11, 12]], dtype=int32)>)
+
+# Try to matrix multiply tensors of same shape
+x @ y
+ ---------------------------------------------------------------------------
+InvalidArgumentError                      Traceback (most recent call last)
+/tmp/ipykernel_2523/2065015500.py in <cell line: 0>()
+      1 # Try to matrix multiply tensors of same shape
+----> 2 x @ y
+
+1 frames/usr/local/lib/python3.12/dist-packages/tensorflow/python/util/traceback_utils.py in error_handler(*args, **kwargs)
+    151     except Exception as e:
+    152       filtered_tb = _process_traceback_frames(e.__traceback__)
+--> 153       raise e.with_traceback(filtered_tb) from None
+    154     finally:
+    155       del filtered_tb
+
+/usr/local/lib/python3.12/dist-packages/tensorflow/python/framework/ops.py in raise_from_not_ok_status(e, name)
+   6025 def raise_from_not_ok_status(e, name) -> NoReturn:
+   6026   e.message += (" name: " + str(name if name is not None else ""))
+-> 6027   raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+   6028 
+   6029 
+
+InvalidArgumentError: {{function_node __wrapped__MatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,2], In[1]: [3,2] [Op:MatMul] name: 
+
+# Try to matrix multiply tensors of same shape
+tf.matmul(x, y)
+ ---------------------------------------------------------------------------
+InvalidArgumentError                      Traceback (most recent call last)
+/tmp/ipykernel_2523/1713246291.py in <cell line: 0>()
+      1 # Try to matrix multiply tensors of same shape
+----> 2 tf.matmul(x, y)
+
+2 frames/usr/local/lib/python3.12/dist-packages/tensorflow/python/ops/weak_tensor_ops.py in wrapper(*args, **kwargs)
+    140   def wrapper(*args, **kwargs):
+    141     if not ops.is_auto_dtype_conversion_enabled():
+--> 142       return op(*args, **kwargs)
+    143     bound_arguments = signature.bind(*args, **kwargs)
+    144     bound_arguments.apply_defaults()
+
+/usr/local/lib/python3.12/dist-packages/tensorflow/python/util/traceback_utils.py in error_handler(*args, **kwargs)
+    151     except Exception as e:
+    152       filtered_tb = _process_traceback_frames(e.__traceback__)
+--> 153       raise e.with_traceback(filtered_tb) from None
+    154     finally:
+    155       del filtered_tb
+
+/usr/local/lib/python3.12/dist-packages/tensorflow/python/framework/ops.py in raise_from_not_ok_status(e, name)
+   6025 def raise_from_not_ok_status(e, name) -> NoReturn:
+   6026   e.message += (" name: " + str(name if name is not None else ""))
+-> 6027   raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+   6028 
+   6029 
+
+InvalidArgumentError: {{function_node __wrapped__MatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,2], In[1]: [3,2] [Op:MatMul] name: 
+
+
+
+
+
+
